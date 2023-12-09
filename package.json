@@ -1,0 +1,17 @@
+{
+  "name": "challenge-back",
+  "version": "1.0.0",
+  "description": "Challenge-bakc",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "dev": "npx nodemon ."
+  },
+  "author": "Daniel Barreto",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3"
+  }
+}
