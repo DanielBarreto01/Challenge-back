@@ -1,11 +1,11 @@
 {
   "name": "challenge-back",
   "version": "1.0.0",
-  "description": "Challenge-bakc",
-  "main": "app.js",
+  "description": "Challenge-back",
+  "main": "app.ts",
   "scripts": {
     "test": "test",
-    "dev": "npx nodemon ."
+    "dev": "nodemon app.ts --exec ts-node"
   },
   "author": "Daniel Barreto",
   "license": "ISC",
@@ -13,5 +13,13 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongoose": "^8.0.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/mongoose": "^5.11.97",
+    "nodemon": "^2.0.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }

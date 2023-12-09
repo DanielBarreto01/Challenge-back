@@ -1,19 +1,21 @@
-const express = require('express');
-const path = require('path');
-require('dotenv').config();
-const { connectionDb } = require('./src/db connection/connection');
-const router = require('./src/routes/index');
+import express from 'express';
+import path from 'path';
+import dotenv from 'dotenv';
+import { connectionDb } from './src/db connection/connection';
+import router from './src/routes/index';
 
+dotenv.config();
 connectionDb();
+
 const app = express();
 
 app.use(express.json());
 
-// habilita los cors
+// Habilita los cors
 app.set('port', process.env.PORT);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api',router);
+app.use('/api', router);
 
 const server = app.listen(app.get('port'), () => {
     console.log('Funciona en puerto: ', app.get('port'));
