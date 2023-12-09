@@ -5,8 +5,7 @@ dotenv.config();
 
 const connectionDb = async (): Promise<void> => {
   try {
-    await mongoose.connect(process.env.DATABASE_URL as string, {
-    });
+    await mongoose.connect(process.env.DATABASE_URL as string);
     console.log('Conectado a la base de datos de MongoDB');
   } catch (error) {
     console.error(error);
