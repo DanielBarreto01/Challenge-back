@@ -3,7 +3,7 @@ import { Product, IProduct } from '../models/Product';
 
 const getProducts = async (req: Request, res: Response): Promise<void> => {
   try {
-    const products: IProduct[] = await Product.find();
+    const products: IProduct[] = await Product.find({inStock: true});
     res.json({ products });
   } catch (error) {
     console.log(error);
