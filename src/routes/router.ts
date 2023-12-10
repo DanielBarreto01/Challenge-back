@@ -111,6 +111,6 @@ router.get('/clients', getClients);
  *                                          special_price:
  *                                              type: number
  */
-router.get('/:user_id/:product_brand', getPrice);
+router.get('/price/:user_id/:product_brand', getPrice);
 
 export default router;
