@@ -4,7 +4,7 @@
   "description": "Challenge-back",
   "main": "app.ts",
   "scripts": {
-    "test": "test",
+    "test": "cypress open --browser edge --e2e",
     "dev": "nodemon app.ts --exec ts-node"
   },
   "author": "Daniel Barreto",
@@ -17,10 +17,13 @@
     "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
+    "@cypress/webpack-preprocessor": "^6.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/mongoose": "^5.11.97",
+    "cypress": "^13.6.1",
     "nodemon": "^2.0.14",
+    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }

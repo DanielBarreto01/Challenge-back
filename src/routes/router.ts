@@ -5,7 +5,6 @@ import { getClients } from '../controllers/priceController';
 import { getPrice } from '../controllers/priceController';
 
 
-
 const router: Router = express.Router();
 /**
  * @openapi
