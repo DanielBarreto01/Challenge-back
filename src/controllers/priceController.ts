@@ -11,7 +11,7 @@ const getPrice = async (req: Request, res: Response): Promise<void> => {
     console.log(products);
 
     if (!user || !products.length) {
-      res.status(404).json({ message: 'Usuario o productos no encontrados' });
+      res.status(404).json({ message: 'User or products not found' });
       return;
     }
     console.log(user.special_price);
@@ -43,7 +43,7 @@ const getPrice = async (req: Request, res: Response): Promise<void> => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Error de servicio' });
+    res.status(500).json({ message: 'Out of service' });
   }
 };
 //obtener los ususraios
@@ -55,7 +55,5 @@ const getClients = async (req: Request, res: Response): Promise<void> => {
     throw error;
   }
 }
-
-
 
 export { getClients, getPrice, };

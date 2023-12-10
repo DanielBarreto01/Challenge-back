@@ -7,7 +7,7 @@ const getProducts = async (req: Request, res: Response): Promise<void> => {
     res.json({ products });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: 'Error al obtener los productos' });
+    res.status(400).json({ message: 'Error al obtener los productos' });
   }
 };
 
