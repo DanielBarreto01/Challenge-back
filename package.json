@@ -28,5 +28,9 @@
     "nodemon": "^2.0.14",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2"
-  }
+  },
+  "compilerOptions": {
+      "types": ["@types/express"]
+    }
+  
 }
