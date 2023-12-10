@@ -5,7 +5,8 @@
   "main": "app.ts",
   "scripts": {
     "test": "cypress open --browser edge --e2e",
-    "dev": "nodemon app.ts --exec ts-node"
+    "dev": "nodemon app.ts --exec ts-node",
+    "start": "node app.ts"
   },
   "author": "Daniel Barreto",
   "license": "ISC",

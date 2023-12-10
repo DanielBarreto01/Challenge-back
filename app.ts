@@ -12,13 +12,15 @@ const app = express();
 
 app.use(express.json());
 
-// Habilita los cors
-app.set('port', process.env.PORT);
+app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', router);
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+  });
 
-const server = app.listen(app.get('port'), () => {
+  const server = app.listen(app.get('port'), () => {
     v1swaggerDocs(app, app.get('port'));
     console.log('Funciona en puerto: ', app.get('port'));
 });
