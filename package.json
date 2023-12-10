@@ -6,7 +6,8 @@
   "scripts": {
     "test": "cypress open --browser edge --e2e",
     "dev": "ts-node app.ts",
-    "start": "tsc && node dist/app.js"
+    "start": "tsc && node dist/app.js",
+    "build": "tsc"
   },
   "author": "Daniel Barreto",
   "license": "ISC",
