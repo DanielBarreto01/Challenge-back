@@ -2,7 +2,7 @@
   "name": "challenge-back",
   "version": "1.0.0",
   "description": "Challenge-back",
-  "main": "app.ts",
+  "main": "dist/app.js",
   "scripts": {
     "build": "tsc",
     "test": "cypress open --browser edge --e2e",
