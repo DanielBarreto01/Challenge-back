@@ -1,4 +1,5 @@
-import express from 'express';
+
+const express = require('express');
 import path from 'path';
 import dotenv from 'dotenv';
 import { connectionDb } from './src/db connection/connection';
@@ -12,13 +13,10 @@ const app = express();
 
 app.use(express.json());
 
-const port = process.env.PORT ?? 3000;
+app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', router);
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-  });
 
   const server = app.listen(app.get('port'), () => {
     v1swaggerDocs(app, app.get('port'));
