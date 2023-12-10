@@ -30,7 +30,8 @@
     "ts-node": "^10.9.2"
   },
   "compilerOptions": {
-      "types": ["@types/express"]
+      "types": ["@types/express"],
+      "outDir": "./dist"
     }
   
 }
