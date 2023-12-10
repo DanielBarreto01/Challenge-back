@@ -1,5 +1,4 @@
-
-const express = require('express');
+import express from 'express';
 import path from 'path';
 import dotenv from 'dotenv';
 import { connectionDb } from './src/db connection/connection';
@@ -18,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', router);
 
-  const server = app.listen(app.get('port'), () => {
-    v1swaggerDocs(app, app.get('port'));
-    console.log('Funciona en puerto: ', app.get('port'));
+const server = app.listen(app.get('port'), () => {
+  v1swaggerDocs(app, app.get('port'));
+  console.log('Funciona en puerto: ', app.get('port'));
 });
