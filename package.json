@@ -7,7 +7,7 @@
     "build": "tsc",
     "test": "cypress open --browser edge --e2e",
     "dev": "ts-node app.ts",
-    "start": "npm run build && ls && node app.js"
+    "start": "npm run build && ls dist && node dist/app.js"
   },
   "author": "Daniel Barreto",
   "license": "ISC",
