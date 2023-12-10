@@ -6,8 +6,8 @@ interface IProduct extends Document {
   inStock: boolean;
   price: number;
   brand: string;
+  stock:number;
   special_price: number;
-  __v: number;
 }
 
 const ProductSchema: Schema = new Schema({
@@ -16,6 +16,7 @@ const ProductSchema: Schema = new Schema({
   inStock: { type: Boolean, default: true },
   price: { type: Number, required: true },
   brand:{ type: String, required: true },
+  stock:{ type: Number, required: true },
   special_price: { type: Number, required: true },
 });
 

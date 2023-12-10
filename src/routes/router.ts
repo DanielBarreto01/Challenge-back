@@ -10,6 +10,6 @@ const router: Router = express.Router();
 
 router.get('/products', getProducts);
 router.get('/clients', getClients);
-router.get('/:user_id/:model', getPrice);
+router.get('/:user_id/:product_brand', getPrice);
 router.get('/brands', getBrands);
 export default router;

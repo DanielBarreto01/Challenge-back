@@ -1,37 +1,55 @@
-import { Request, Response } from 'express';
+import { Request, Response, json } from 'express';
 import { Product, IProduct } from '../models/Product';
 import { Client, IClient } from '../models/users';
-import { Brand,IBrand } from '../models/Brand';
+import { Brand, IBrand } from '../models/Brand';
+
+
 
 const getPrice = async (req: Request, res: Response): Promise<void> => {
   try {
-    const client: IClient | null = await Client.findById(req.params.user_id);
-    const product: IProduct | null = await Product.findOne({ name: req.params.nombre_producto });
-    
-    if (!client || !product) {
-      res.status(404).json({ message: 'Cliente o producto no encontrado' });
+    const { user_id, product_brand } = req.params;
+    const user: IClient | null = await Client.findById(user_id).populate('special_price');
+    const products = await Product.find({ brand: { $regex: new RegExp(`^${product_brand}$`, "i") }, stock: { $ne: 0 } });
+    console.log(user);
+    console.log(products);
+
+    if (!user || !products.length) {
+      res.status(404).json({ message: 'Usuario o productos no encontrados' });
       return;
     }
-    console.log("1");
-    let finalPrice = product.price;
-    console.log(finalPrice);
-
-  if (client.special_price && client.special_price.map(String).includes(product.brand)) {
-    console.log("2");
-    finalPrice = product.special_price;
-  }
-
-  
-  res.json({ finalPrice });
+    console.log(user.special_price);
+   
+    const hasSpecialPrice = user && user.special_price 
+    ? user.special_price.some((item: any) => item && item.toLowerCase() === product_brand.toLowerCase()) 
+    : false;
+    console.log(hasSpecialPrice);
+    if(!hasSpecialPrice){
+      res.json({
+        products: products.map(prod => {
+          return {
+            name: `${prod.brand} - ${prod.name}`,
+            price: prod.price
+          }
+        })
+      });
+    } else {
+      res.json({
+        products: products.map(prod => {
+          const hasSpecialPrice = user.special_price && user.special_price.some((item: any) => item.toLowerCase() === prod.brand.toLowerCase());
+          return {
+            name: prod.name,
+            Brand: prod.brand,
+            special_price: hasSpecialPrice ? prod.special_price : prod.price
+          }
+        })
+      })
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error de servicio' });
   }
 };
-
-
-
-//necesti obtener los ususraios
+//obtener los ususraios
 const getClients = async (req: Request, res: Response): Promise<void> => {
   try {
     const clients: IClient[] = await Client.find();
@@ -50,4 +68,4 @@ const getBrands = async (req: Request, res: Response): Promise<void> => {
   }
 }
 
-export { getClients , getPrice , getBrands};
+export { getClients, getPrice, getBrands };
