@@ -1,9 +1,6 @@
 import { Request, Response, json } from 'express';
 import { Product, IProduct } from '../models/Product';
 import { Client, IClient } from '../models/users';
-import { Brand, IBrand } from '../models/Brand';
-
-
 
 const getPrice = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -59,13 +56,6 @@ const getClients = async (req: Request, res: Response): Promise<void> => {
   }
 }
 
-const getBrands = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const brands: IBrand[] = await Brand.find();
-    res.status(200).json({ brands });
-  } catch (error) {
-    throw error;
-  }
-}
 
-export { getClients, getPrice, getBrands };
+
+export { getClients, getPrice, };
