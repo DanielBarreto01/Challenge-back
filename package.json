@@ -17,7 +17,8 @@
     "mongoose": "^8.0.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@types/express": "^4.17.13"
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^6.0.0",
