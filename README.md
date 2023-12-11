@@ -29,6 +29,12 @@ npm test
 
 ## EndPoints
 
+1. /products  :returns the products that are in stock and has more than 1 product available
+2. /price/:user_id/:product_brand  :returns the products that have a special price and are within the sneaker brands that have a discount for the specific customer or user, in case of conratio returns the products of the specific brand with the base price
+3. api-docs  :returns the swagger documentation of the respective API endpoints
+
+## Deploy
+
 
 
 
