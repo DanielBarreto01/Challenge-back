@@ -13,7 +13,7 @@ npm i
 
 ## Project execution
 
-The environment variables are already configured, you can proceed to execution
+The environment variables are already configured, you can proceed to execution.
 
 1.Execution project
 
@@ -21,7 +21,7 @@ npm run dev
 
 2.Execution test
 
-cypress uses a browser to observe the tests by default it uses CHROME if you do not have it installed go to the package.json file and in the 'test' script change it from chrome to the browser you use
+cypress uses a browser to observe the tests by default it uses CHROME if you do not have it installed go to the package.json file and in the 'test' script change it from chrome to the browser you use.
 
 Open in you the browser http://localhost:5000
 
@@ -29,9 +29,11 @@ npm test
 
 ## EndPoints
 
-1. /products  :returns the products that are in stock and has more than 1 product available
-2. /price/:user_id/:product_brand  :returns the products that have a special price and are within the sneaker brands that have a discount for the specific customer or user, in case of conratio returns the products of the specific brand with the base price
-3. api-docs  :returns the swagger documentation of the respective API endpoints
+1. /products  :returns the products that are in stock and has more than 1 product available.
+2. /price/:user_id/:product_brand  :returns the products that have a special price and are within the sneaker brands that have a discount for the specific customer or user, in case of conratio returns the products of the specific brand with the base price.
+3. /clients  :Return clients.
+
+4. api-docs  :returns the swagger documentation of the respective API endpoints
 
 ## Deploy
 
@@ -40,6 +42,56 @@ deployment done on railway.com
 https://challenge-back-production.up.railway.app
 
 ## EndPoint Deployed With Example
+https://challenge-back-production.up.railway.app/products
+https://challenge-back-production.up.railway.app/price/6574e80fad7cc19ee4798502/Puma
+https://challenge-back-production.up.railway.app/clients
+
+## Documentacion Swagger
+
+https://challenge-back-production.up.railway.app/api-docs/
+
+## Use cases Tests
+
+1. customers without brands and without discounts 
+
+6574e80fad7cc19ee4798502
+Puma
+
+Result:
+{
+    "products": [
+        {
+            "name": "Puma - Air Force",
+            "price": 171
+        },
+        {
+            "name": "Puma - Zoom",
+            "price": 127
+        }
+    ]
+}
+
+2. Customers with discount brands
+
+6574e80fbbd60825accb7019
+Adidas
+
+Result:
+
+{
+    "products": [
+        {
+            "name": "Air Force",
+            "Brand": "Adidas",
+            "special_price": 114
+        }
+    ]
+}
+
+
+
+
+
 
 
 
