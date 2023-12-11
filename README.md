@@ -26,6 +26,12 @@ The project follows a layered architecture with a Model-View-Controller (MVC) de
     npm i
     ```
 
+3. Configure environment.
+ 
+configure environment variables in .env file 
+- **PORT** : port number
+- **DATABASE_URL** : mongo db database link
+
 ## Project Execution
 
 The environment variables are already configured; you can proceed with the execution.
