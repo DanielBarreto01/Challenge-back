@@ -11,7 +11,7 @@ git clone https://github.com/DanielBarreto01/Challenge-back.git
 
 npm i
 
-## Project_execution
+## Project execution
 
 The environment variables are already configured, you can proceed to execution
 
@@ -34,6 +34,14 @@ npm test
 3. api-docs  :returns the swagger documentation of the respective API endpoints
 
 ## Deploy
+
+deployment done on railway.com
+
+https://challenge-back-production.up.railway.app
+
+## EndPoint Deployed With Example
+
+
 
 
 
