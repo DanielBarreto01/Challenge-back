@@ -23,7 +23,12 @@ npm run dev
 
 cypress uses a browser to observe the tests by default it uses CHROME if you do not have it installed go to the package.json file and in the 'test' script change it from chrome to the browser you use
 
+Open in you the browser http://localhost:5000
+
 npm test
+
+## EndPoints
+
 
 
 
