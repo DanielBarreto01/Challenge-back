@@ -1,6 +1,26 @@
 # Challenge-back
 
 This repository is a response to a technical test from DRENVÍO, part of the technical interview process. It involves the development of an API using Node.js, MongoDB with Mongoose, Swagger for endpoint documentation, and Cypress for end-to-end tests, all implemented in TypeScript.
+## Architecture
+
+### Layered Architecture with MVC Model
+
+The project follows a layered architecture with a Model-View-Controller (MVC) design pattern. This architectural choice enhances maintainability, scalability, and separation of concerns in the codebase.
+
+challenge-back
+|-- src
+|   |-- controllers
+|   |   |-- productsController.ts
+|   |   |-- priceController.ts
+|   |-- models
+|   |   |-- Product.ts
+|   |   |-- SpecialPrice.ts
+|   |-- routes
+|   |   |-- router.ts
+|-- app.ts
+|-- .gitignore
+|-- package.json
+
 
 ## Installation
 
