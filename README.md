@@ -1,92 +1,102 @@
 # Challenge-back
-Technical test from the company DRENVÍO as part of the technical interview, developing an API with Node js, mongose for the Mongo db database, Swggaer for endPoint documentation, Cypress for e2e tests, developed in TypeScrip.
+
+This repository is a response to a technical test from DRENVÍO, part of the technical interview process. It involves the development of an API using Node.js, MongoDB with Mongoose, Swagger for endpoint documentation, and Cypress for end-to-end tests, all implemented in TypeScript.
 
 ## Installation
 
-1. Clone this repo.
+1. Clone this repository.
 
-git clone https://github.com/DanielBarreto01/Challenge-back.git
+    ```bash
+    git clone https://github.com/DanielBarreto01/Challenge-back.git
+    ```
 
-2. install project module dependency
+2. Install project dependencies.
 
-npm i
+    ```bash
+    npm i
+    ```
 
-## Project execution
+## Project Execution
 
-The environment variables are already configured, you can proceed to execution.
+The environment variables are already configured; you can proceed with the execution.
 
-1.Execution project
+1. **Execute the project:**
 
-npm run dev
+    ```bash
+    npm run dev
+    ```
 
-2.Execution test
+2. **Execute tests:**
 
-cypress uses a browser to observe the tests by default it uses CHROME if you do not have it installed go to the package.json file and in the 'test' script change it from chrome to the browser you use.
+    Cypress uses a browser to observe the tests; by default, it uses CHROME. If you don't have it installed, go to the `package.json` file and, in the 'test' script, change it from `chrome` to the browser you use. Open [http://localhost:5000](http://localhost:5000) in your browser.
 
-Open in you the browser http://localhost:5000
+    ```bash
+    npm test
+    ```
 
-npm test
+## Endpoints
 
-## EndPoints
+1. **/products:** Returns products that are in stock and have more than 1 item available.
+2. **/price/:user_id/:product_brand:** Returns products with special prices within sneaker brands that offer discounts to the specific customer or user. If no discount is applicable, it returns products of the specific brand with the base price.
+3. **/clients:** Returns clients.
+4. **/api-docs:** Returns the Swagger documentation of the respective API endpoints.
 
-1. /products  :returns the products that are in stock and has more than 1 product available.
-2. /price/:user_id/:product_brand  :returns the products that have a special price and are within the sneaker brands that have a discount for the specific customer or user, in case of conratio returns the products of the specific brand with the base price.
-3. /clients  :Return clients.
+## Deployment
 
-4. api-docs  :returns the swagger documentation of the respective API endpoints
+The deployment is done on [railway.com](https://challenge-back-production.up.railway.app).
 
-## Deploy
+## Deployed Endpoints with Examples
 
-deployment done on railway.com
+- [Products](https://challenge-back-production.up.railway.app/products)
+- [Price](https://challenge-back-production.up.railway.app/price/6574e80fad7cc19ee4798502/Puma)
+- [Clients](https://challenge-back-production.up.railway.app/clients)
 
-https://challenge-back-production.up.railway.app
+## Swagger Documentation
 
-## EndPoint Deployed With Example
-https://challenge-back-production.up.railway.app/products
-https://challenge-back-production.up.railway.app/price/6574e80fad7cc19ee4798502/Puma
-https://challenge-back-production.up.railway.app/clients
+Access the Swagger documentation [here](https://challenge-back-production.up.railway.app/api-docs/).
 
-## Documentacion Swagger
+## Use Cases Tests
 
-https://challenge-back-production.up.railway.app/api-docs/
+1. **Customers without brands and without discounts:**
 
-## Use cases Tests
+    - User ID: 6574e80fad7cc19ee4798502
+    - Brand: Puma
 
-1. customers without brands and without discounts 
+    **Result:**
 
-6574e80fad7cc19ee4798502
-Puma
+    ```json
+    {
+        "products": [
+            {
+                "name": "Puma - Air Force",
+                "price": 171
+            },
+            {
+                "name": "Puma - Zoom",
+                "price": 127
+            }
+        ]
+    }
+    ```
 
-Result:
-{
-    "products": [
-        {
-            "name": "Puma - Air Force",
-            "price": 171
-        },
-        {
-            "name": "Puma - Zoom",
-            "price": 127
-        }
-    ]
-}
+2. **Customers with discount brands:**
 
-2. Customers with discount brands
+    - User ID: 6574e80fbbd60825accb7019
+    - Brand: Adidas
 
-6574e80fbbd60825accb7019
-Adidas
+    **Result:**
 
-Result:
-
-{
-    "products": [
-        {
-            "name": "Air Force",
-            "Brand": "Adidas",
-            "special_price": 114
-        }
-    ]
-}
+    ```json
+    {
+        "products": [
+            {
+                "name": "Air Force",
+                "Brand": "Adidas",
+                "special_price": 114
+            }
+        ]
+    }
+    ```
 
 
 
