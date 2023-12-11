@@ -7,7 +7,7 @@ Technical test from the company DRENVÍO as part of the technical interview, dev
 
 git clone https://github.com/DanielBarreto01/Challenge-back.git
 
-2.install project module dependency
+2. install project module dependency
 
 npm i
 
