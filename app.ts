@@ -16,6 +16,9 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', router);
+app.get('/', (req, res) => {
+  res.send('¡Welcome to the api sneaker store!');
+});
 
 const server = app.listen(app.get('port'), () => {
   v1swaggerDocs(app, app.get('port'));
