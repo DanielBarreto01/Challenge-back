@@ -7,19 +7,15 @@ const getPrice = async (req: Request, res: Response): Promise<void> => {
     const { user_id, product_brand } = req.params;
     const user: IClient | null = await Client.findById(user_id).populate('special_price');
     const products = await Product.find({ brand: { $regex: new RegExp(`^${product_brand}$`, "i") }, stock: { $ne: 0 } });
-    console.log(user);
-    console.log(products);
 
     if (!user || !products.length) {
       res.status(404).json({ message: 'User or products not found' });
       return;
     }
-    console.log(user.special_price);
    
     const hasSpecialPrice = user && user.special_price 
     ? user.special_price.some((item: any) => item && item.toLowerCase() === product_brand.toLowerCase()) 
     : false;
-    console.log(hasSpecialPrice);
     if(!hasSpecialPrice){
       res.json({
         products: products.map(prod => {
@@ -46,7 +42,7 @@ const getPrice = async (req: Request, res: Response): Promise<void> => {
     res.status(500).json({ message: 'Out of service' });
   }
 };
-//obtener los ususraios
+
 const getClients = async (req: Request, res: Response): Promise<void> => {
   try {
     const clients: IClient[] = await Client.find();
