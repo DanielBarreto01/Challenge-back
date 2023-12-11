@@ -11,3 +11,19 @@ git clone https://github.com/DanielBarreto01/Challenge-back.git
 
 npm i
 
+##Project execution
+
+The environment variables are already configured, you can proceed to execution
+
+1.Execution project
+
+npm run dev
+
+2.Execution test
+
+cypress uses a browser to observe the tests by default it uses CHROME if you do not have it installed go to the package.json file and in the 'test' script change it from chrome to the browser you use
+
+npm test
+
+
+
