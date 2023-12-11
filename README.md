@@ -7,20 +7,10 @@ This repository is a response to a technical test from DRENVÍO, part of the tec
 
 The project follows a layered architecture with a Model-View-Controller (MVC) design pattern. This architectural choice enhances maintainability, scalability, and separation of concerns in the codebase.
 
-challenge-back
-|-- src
-|   |-- controllers
-|   |   |-- productsController.ts
-|   |   |-- priceController.ts
-|   |-- models
-|   |   |-- Product.ts
-|   |   |-- SpecialPrice.ts
-|   |-- routes
-|   |   |-- router.ts
-|-- app.ts
-|-- .gitignore
-|-- package.json
-
+- controllers
+- models
+- routes
+- db connection
 
 ## Installation
 
