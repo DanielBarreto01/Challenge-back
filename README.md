@@ -7,10 +7,10 @@ This repository is a response to a technical test from DRENVÍO, part of the tec
 
 The project follows a layered architecture with a Model-View-Controller (MVC) design pattern. This architectural choice enhances maintainability, scalability, and separation of concerns in the codebase.
 
-- controllers
-- models
-- routes
-- db connection
+- **Controllers:** Handles incoming HTTP requests and manages responses.
+- **Models:** Defines data structures and business logic.
+- **Routes:** Specifies API endpoints and connects them to controllers.
+- **DB Connection:** Establishes a connection to the MongoDB database.
 
 ## Installation
 
