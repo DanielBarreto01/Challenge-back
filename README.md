@@ -43,13 +43,14 @@ The environment variables are already configured; you can proceed with the execu
 
 ## Deployment
 
-The deployment is done on [railway.com](https://challenge-back-production.up.railway.app).
+The deployment is done on railway.com 
+- https://challenge-back-production.up.railway.app.
 
 ## Deployed Endpoints with Examples
 
-- [Products](https://challenge-back-production.up.railway.app/products)
-- [Price](https://challenge-back-production.up.railway.app/price/6574e80fad7cc19ee4798502/Puma)
-- [Clients](https://challenge-back-production.up.railway.app/clients)
+- https://challenge-back-production.up.railway.app/products
+- https://challenge-back-production.up.railway.app/price/6574e80fad7cc19ee4798502/Puma
+- https://challenge-back-production.up.railway.app/clients
 
 ## Swagger Documentation
 
