@@ -8,7 +8,7 @@ import { getPrice } from '../controllers/priceController';
 const router: Router = express.Router();
 /**
  * @openapi
- * /api/products:
+ * /products:
  *  get:
  *      tags:
  *          - Products
@@ -74,7 +74,7 @@ router.get('/products', getProducts);
 router.get('/clients', getClients);
 /**
  * @openapi
- * /{user_id}/{product_brand}:
+ * /price/{user_id}/{product_brand}:
  *  get:
  *      tags:
  *          - Products
